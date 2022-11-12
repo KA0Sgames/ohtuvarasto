@@ -18,7 +18,16 @@ class Varasto:
 
     # huom: ominaisuus voidaan myös laskea. Ei tarvita erillistä kenttää viela_tilaa tms.
     def paljonko_mahtuu(self):
-        return self.tilavuus - self.saldo
+        if self.tilavuus > 0: #tänne lisätty turhia lohkoja jotta nested blocks sääntö rikkoutuu
+            if self.saldo > 0:
+                if self.tilavuus > self.saldo:
+                    return self.tilavuus - self.saldo
+                else:
+                    return 0.0
+            else:
+                return self.tilavuus
+        else:
+            return 0
 
     def lisaa_varastoon(self, maara):
         if maara < 0:
@@ -39,6 +48,19 @@ class Varasto:
 
         self.saldo = self.saldo - maara
 
+        eka = 4 #lisätty rikkomaan max statements
+        toka = 3
+        kolmas = 2
+        summa = eka + toka
+        summa += kolmas
+        print(summa)
+
+        lista =[]
+        lista.append(eka)
+        lista.append(toka)
+        lista.append(kolmas)
+
+        print(max(lista))
         return maara
 
     def __str__(self):
