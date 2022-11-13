@@ -1,4 +1,0 @@
-Tehdään paikallisella koneella ylimääräinen tiedosto, kun GitHubissa on muokattu README.md tiedostoa, ennen muutoksen pullausta,
-jotta saadaan virhe aikaan.
-
-Muutetaan vähän, testataan codecoven kattavuusraportin ilmestymistä.
